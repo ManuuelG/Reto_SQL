@@ -124,6 +124,16 @@ MISMA DB EJERCICIO 1
 9. Devuelve una lista con el nombre de todos los productos que contienen la cadena `Monitor` en el nombre y tienen un precio inferior a 215 €.
 10. Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente).
 
-#### EJERCICIO 2 - FILTROS Y FUNCIONES
+#### EJERCICIO 3 - CONSULTAS MULTITABLA
 
-## ITERACIÓN 3 DRIVER
+\*_VIDEO LESSON_:
+
+DB EJERCICIO ANTERIOR:
+
+1. Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
+
+2. Devuelve un listado de todos los fabricantes que existen en la base de datos, junto con los productos que tiene cada uno de ellos. El listado deberá mostrar también aquellos fabricantes que no tienen productos asociados.
+
+3. vuelve un listado donde sólo aparezcan aquellos fabricantes que no tienen ningún producto asociado.
+
+4. ¿Pueden existir productos que no estén relacionados con un fabricante? Justifique su respuesta.
