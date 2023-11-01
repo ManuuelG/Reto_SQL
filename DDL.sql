@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS Usuarios (
   FechaNacimiento DATE NOT NULL,
   Sexo VARCHAR (10) NOT NULL,
   CP VARCHAR (10) NOT NULL,
+  PlaylistID INT UNSIGNED,
   FOREIGN KEY (PlaylistID) REFERENCES Playlist (PlaylistID) 
 );
 
@@ -37,12 +38,12 @@ TarjetaID INT PRIMARY KEY,
 Codigo INT NOT NULL,
 MesCaducidad DATE NOT NULL,
 AñoCaducidad DATE NOT NULL,
-UserID INT,
+UserID INT UNSIGNED,
 FOREIGN KEY (UserID) REFERENCES Usuarios (UserID)
 );
 CREATE TABLE IF NOT EXISTS Paypal (
 Username VARCHAR (255) NOT NULL,
-UserID INT,
+UserID INT UNSIGNED,
 FOREIGN KEY (UserID) REFERENCES Usuarios (UserID)
 );
 
@@ -52,7 +53,7 @@ CREATE TABLE Playlist (
     NumeroCanciones INT NOT NULL,
     FechaCreacion DATE NOT NULL,
     Titulo VARCHAR (50) NOT NULL,
-    UserID INT,
+    UserID INT UNSIGNED,
     FOREIGN KEY (UserID) REFERENCES Usuarios (UserID)
 );
 
@@ -61,9 +62,9 @@ CREATE TABLE Cancion (
     Titulo VARCHAR(50) NOT NULL,
     Duracion INT NOT NULL,
     Reproducciones INT NOT NULL,
-    PlaylistID INT,
-    AlbumID INT,
-    UserID INT,
+    PlaylistID INT UNSIGNED,
+    AlbumID INT UNSIGNED,
+    UserID INT UNSIGNED,
     FOREIGN KEY (PlaylistID) REFERENCES Playlist (PlaylistID),
     FOREIGN KEY (AlbumID) REFERENCES Album (AlbumID),
      FOREIGN KEY (UserID) REFERENCES Usuarios (UserID)
@@ -74,8 +75,8 @@ CREATE TABLE Album (
     Titulo VARCHAR(50) NOT NULL,
     AñoPublicacion INT NOT NULL,
     Imagen VARCHAR(255) NOT NULL,
-    ArtistID INT,
-    CancionID INT,
+    ArtistID INT UNSIGNED,
+    CancionID INT UNSIGNED,
     FOREIGN KEY (ArtistID) REFERENCES Artista (ArtistID),
     FOREIGN KEY (CancionID) REFERENCES Cancion (CancionID)
 );
@@ -84,7 +85,7 @@ CREATE TABLE Artista (
     ArtistID INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(100) NOT NULL,
     Imagen VARCHAR(255) NOT NULL,
-    UserID INT,
+    UserID INT UNSIGNED,
     FOREIGN KEY (UserID) REFERENCES Usuarios (UserID)
 );
 
